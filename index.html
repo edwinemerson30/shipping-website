@@ -2,31 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShippingFlight | Global Goods Transport</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #007BFF; color: white; padding: 20px; text-align: center; }
-    .container { padding: 40px; max-width: 600px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, p { text-align: center; }
-    form { text-align: center; margin-top: 20px; }
-    input[type="text"] { padding: 10px; width: 80%; max-width: 300px; }
-    input[type="submit"] { padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShippingFlight - Global Shipping & Logistics</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>ShippingFlight</h1>
-    <p>We Deliver Worldwide</p>
-  </header>
 
+<header>
   <div class="container">
-    <h2>Track Your Shipment</h2>
-    <form action="track.html" method="get">
-      <input type="text" name="tracking" placeholder="Enter Tracking Number" required />
-      <br/><br/>
-      <input type="submit" value="Track Now" />
-    </form>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="track.html">Track Shipment</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Your Trusted Partner in Global Shipping</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Welcome to ShippingFlight</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center; font-size: 1.2rem;">
+      We provide reliable, fast, and secure transportation of your goods worldwide.
+      Track your shipment easily and stay updated every step of the way.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Our Core Services</h2>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>Air Freight</h3>
+        <p>Fast and efficient air cargo transportation worldwide.</p>
+      </div>
+      <div class="service-item">
+        <h3>Ocean Freight</h3>
+        <p>Cost-effective and reliable ocean shipping services.</p>
+      </div>
+      <div class="service-item">
+        <h3>Custom Clearance</h3>
+        <p>Professional customs handling to ensure smooth deliveries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; 2025 ShippingFlight. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
+  </div>
+</footer>
+
 </body>
 </html>

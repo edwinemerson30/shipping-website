@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tracking Result | ShippingFlight</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #e9ecef; margin: 0; padding: 0; }
-    .container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
-    h1 { color: #007BFF; }
-    p { font-size: 18px; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Shipment - ShippingFlight</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<header>
   <div class="container">
-    <h1>Tracking Result</h1>
-    <p>Your tracking number: <strong><script>
-      const params = new URLSearchParams(window.location.search);
-      document.write(params.get("tracking") || "N/A");
-    </script></strong></p>
-    <p>Status: <strong>In Transit</strong></p>
-    <p>Estimated Delivery: <strong>3-5 Business Days</strong></p>
-    <br/>
-    <a href="index.html">Go Back</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track.html" class="active">Track Shipment</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Track Your Shipment</h2>
+
+    <form id="trackForm" class="track-form">
+      <input type="text" id="trackingNumber" placeholder="Enter your tracking number" required />
+      <button type="submit">Track</button>
+    </form>
+
+    <div id="statusBox" class="status-box" style="display:none;"></div>
+  </div>
+</section>
+
+<script>
+  const mockTrackingData = {
+    "ABC123": {
+      status: "In Transit",
+      estimatedDelivery: "2025-08-05",
+      lastLocation: "Shanghai Port",
+    },
+    "XYZ789": {
+      status: "Delivered",
+      estimatedDelivery: "2025-07-20",
+      lastLocation: "Los Angeles Warehouse",
+    },
+    "LMN456": {
+      status: "Pending Pickup",
+      estimatedDelivery: "2025-08-10",
+      lastLocation: "Warehouse in Singapore",
+    }
+  };
+
+  const form = document.getElementById('trackForm');
+  const statusBox = document.getElementById('statusBox');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const tn = document.getElementById('trackingNumber').value.trim().toUpperCase();
+    if (mockTrackingData[tn]) {
+      const data = mockTrackingData[tn];
+      statusBox.style.display = 'block';
+      statusBox.innerHTML = `
+        <strong>Status:</strong> ${data.status}<br/>
+        <strong>Estimated Delivery:</strong> ${data.estimatedDelivery}<br/>
+        <strong>Last Location:</strong> ${data.lastLocation}
+      `;
+    } else {
+      statusBox.style.display = 'block';
+      statusBox.innerHTML = `<strong>No data found for tracking number: ${tn}</strong>`;
+    }
+  });
+</script>
+
+<footer>
+  <div class="container">
+    &copy; 2025 ShippingFlight. All rights reserved.
+  </div>
+</footer>
+
 </body>
 </html>
