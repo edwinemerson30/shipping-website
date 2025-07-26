@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tracking Result | ShippingFlight</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e9ecef; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+    h1 { color: #007BFF; }
+    p { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tracking Result</h1>
+    <p>Your tracking number: <strong><script>
+      const params = new URLSearchParams(window.location.search);
+      document.write(params.get("tracking") || "N/A");
+    </script></strong></p>
+    <p>Status: <strong>In Transit</strong></p>
+    <p>Estimated Delivery: <strong>3-5 Business Days</strong></p>
+    <br/>
+    <a href="index.html">Go Back</a>
+  </div>
+</body>
+</html>
